@@ -42,3 +42,6 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+img{
+    margin:10px;
+}
