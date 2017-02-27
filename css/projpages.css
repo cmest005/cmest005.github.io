@@ -49,7 +49,9 @@ table {
     border-collapse: collapse;
 }
 
-th, td {
+td {
     padding: 10px;
+}
+th {
     text-align: center;
 }
