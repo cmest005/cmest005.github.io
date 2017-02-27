@@ -45,3 +45,13 @@ ul.posts li {
 img{
     margin:10px;
 }
+table {
+    border-collapse: collapse;
+}
+
+table, td {
+    border: 1px solid black;
+}
+td {
+    padding: 10px;
+}
