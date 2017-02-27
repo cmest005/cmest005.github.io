@@ -1,0 +1,114 @@
+<div class="flex-container">
+	<header>
+		<h1>Your Blood Alcohol Concentration</h1>
+	</header>
+
+	<nav class="nav drinkingPattern">
+	</nav>
+
+	<article class="article">
+		<table id="dc1">
+		<tr>	
+		<td><table id="bact">
+		<tr>  
+		<b> <h3><strong>Do you have any reactions to these results?</strong></h3>
+		<input id="awie" type="checkbox" name="feedback" value="r1" onclick="reaction()" /> About what I expected <br /><br>
+		<input id="chpw" type="checkbox" name="feedback" value="r2" onclick="reaction()" /> I can handle it pretty well<br /><br>
+		<input id="htie" type="checkbox" name="feedback" value="r3" onclick="reaction()" /> Higher than expected<br /><br>
+		<input id="iamc" type="checkbox" name="feedback" value="r4" onclick="reaction()" /> I am concerned<br /><br>
+		</b>
+		<textarea name="speech" id="list" style="display: block; width: 600px; height: 200px;"></textarea></td>
+		</tr>
+	</table> </td>
+
+		<td class="c2">
+		<h4>
+			Estimated peak BAC (during regular week of drinking): 0.13<br><br><br><br>
+			Estimated peak BAC (on heavier day of drinking): 0.19<br><br><br><br>
+			Based on these BACs your risk for alcohol problems because of your tolerance for alcohol is: medium-high
+		</h4></td>
+		</tr>
+		</table>
+	</article>
+</div>
+
+<style>
+table, td, th {
+    border: 3px solid black;
+    border-collapse: collapse;
+    padding:10px; 
+}
+
+textarea {
+	   font-size: 14pt;
+	   font-family: Palatino Linotype;
+} 
+
+.flex-container {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	text-align: center;
+}  
+
+.flex-container > * {
+	padding: 25px;
+	-webkit-flex: 1 100%;
+	flex: 1 100%;
+	width: 720px;
+} 
+
+.article {     
+	text-align: left;
+	border: 3px solid #D3D3D3;
+	height: 650px;
+}   
+
+header {background: black;color:white;} 
+footer {background: #aaa;color:white;} 
+
+.nav {background:#eee;}
+
+.nav ul {
+	list-style-type: none;
+    padding: 0;
+}     
+
+.nav ul a {
+	text-decoration: none;
+}  
+
+.drinkingPattern {
+ 	padding-top: 450px;
+ 	height: 650px;
+}  
+
+@media all and (min-width: 768px) {
+	.nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}     
+	.article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}     
+	footer {-webkit-order:3;order:3;} 
+}    
+</style>
+
+<script type="text/javascript">
+function reaction()
+{
+    var textbox = document.getElementById("list");
+    var values = [];
+
+    if(document.getElementById('awie').checked && !chpw.checked && !htie.checked && !iamc.checked) {
+        values.push("You seem to be in touch with the effects alcohol has on you.  Thank about whether or not you have any concerns about the blood alcohol levels you reach when you drink.");
+    }
+    if(document.getElementById('chpw').checked && !awie.checked && !htie.checked && !iamc.checked) {
+        values.push("Some people feel relieved that they can reach relatively high blood alcohol levels without feeling the effects.  They believe this means their bodies handle alcohol safely and efficiently.  Unfortunately, this higher tolerancce for alchol can put us at risk for doing more damage to ourselves without getting the the message that we are reachin potentially dangerous blood alchol levels.");
+    }
+    if(document.getElementById('htie').checked && !chpw.checked && !awie.checked && !iamc.checked) {
+        values.push("It can be surprising to see how high your blood alcohol levels can get, even during what you consider normal drinking situations.  Remember that anyone can develop tolerance to alcohol over time.  Think about other reactions you might be having to this new information.");
+    }
+    if(document.getElementById('iamc').checked && !chpw.checked && !htie.checked && !awie.checked) {
+        values.push("It can be surprising to see how high your blood alcohol levels can get, even during what you consider normal drinking situations.  Remember that anyone can develop tolerance to alcohol over time.  Think about other reactions you might be having to this new information.");
+    }
+    textbox.value = values.join(" ");
+}
+</script>
