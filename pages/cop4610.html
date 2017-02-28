@@ -83,7 +83,41 @@
 			</tr>
 			</table><br><br>
 
+			<h4>I/O scheduling for Linux kernel</h4>
+			The purpose of this project was to implement a C-LOOK I/O scheduler.  The C-LOOK maintains a list of I/O requests by 
+			physical location on the disk.  The scheduler services requests by using the head of the disc as it moves back 
+			and forth across the disk.  
 			
+			
+			<br><br>
+
+			
+			<iframe src="/files/code/clook-iosched.c" width="90%"></iframe>
+			<br><a href="/files/code/clook-iosched.c" target="_blank">full page display</a><br><br>			
+			<iframe src="/files/code/Kconfig.iosched" width="90%"></iframe>
+			<br><a href="/files/code/Kconfig.iosched" target="_blank">full page display</a><br><br>	
+			tester<br>
+			<iframe src="/files/code/test.sh" width="90%"></iframe>
+			<br><a href="/files/code/test.sh" target="_blank">full page display</a><br><br>
+			
+			<table>
+			<tr>	
+				<th>Check scheduler</th>
+				<th>Tester creation</th>				
+				<th>Run tester</th>
+				<th>File 1 output</th>
+				<th>File 2 output</th>
+				<th>Displayed message</th>
+			</tr>	
+			<tr>	
+				<td><a href="/images/[clook].PNG" target="_blank"><img src="/images/[clook]s.png" alt="[clook].PNG"></a></td>
+				<td><a href="/images/touch.PNG" target="_blank"><img src="/images/touchs.png" alt="touch.PNG"></a><br></td>
+				<td><a href="/images/testing.PNG" target="_blank"><img src="/images/testings.png" alt="testing.PNG"></a></td>
+				<td><a href="/images/file1.PNG" target="_blank"><img src="/images/file1s.png" alt="bf100.PNG"></a><br></td>
+				<td><a href="/images/file2.PNG" target="_blank"><img src="/images/file2s.png" alt="ff100.PNG"></a></td>
+				<td><a href="/images/dmesg.PNG" target="_blank"><img src="/images/dmesgs.png" alt="dmesg.PNG"></a><br></td>
+			</tr>
+			</table><br><br>
 			
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
