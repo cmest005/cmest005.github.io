@@ -13,13 +13,44 @@
 	        	<li><a href="/about.html">About</a></li>
 			<li><a href="/projects.html">Projects</a></li>
         		<li><a href="/files/CarlosMestreresume.pdf">Resumé</a></li>
-        		<li><a href="/blog.html">Blog</a></li>
     		</ul>
 		</nav>
 		<div class="container">
     		<div class="blurb">
-        		<h1>Coming Soon</h1>
+        		<h1>COP4710: Databases</h1>
+			<h3>Description</h3>
+			Our Database class was taught using SQL and testing using MySQL through MySQL Workbench and phpMyAdmin.  The 
+			intended outcome was to expose students to information systems and familiarize us with database systems and 
+			architectures.  Some of the most interesting topics covered were: different joins, design schemas, create queries in SQL, relational algebra, and relational calculus.  
+			<br>
+			
+			<h4>Final Project</h4>
+			The goal of this project was to upload a file with 600k+ entries and write 4 queries to test for 
+			correlation between 2 fields.  Here is the creation of the table.<br>
+				<iframe src="/files/code/cmest005HW3.txt" width="90%"></iframe>
+				<br><a href="/files/code/cmest005HW3.txt" target="_blank">full page display</a>
+			<a href="/images/rstc.PNG" target="_blank"><img src="/images/rstcs.png" alt="rstc.PNG"></a><br>
+			<h4>Master script</h4>
+			Using this master script I created, I was able to run 30 test cases.<br>
+			<a href="/images/mscript1.jpg" target="_blank"><img src="/images/mscript1s.jpg" alt="mscript1.jpg"></a><br>
+			<a href="/images/mscrip2.jpg" target="_blank"><img src="/images/mscrip2s.jpg" alt="mscript2.jpg"></a><br>
+			
+			<h4>Verification point test example.</h4>
+			<ol>
+  				<li>Here the script clicks the field to enter the user name</li>
+ 				<li>adds from a list of username test data</li>
+  				<li>clicks the password field</li>
+				<li>adds from the password test data</li>
+				<li>mouse clicks login button</li>
+				<li>if correct data, page changes to the home screen, if not it refreshes with incorrect login info message</li>
+				<li>script uses a visual verification point to match the intended outcome</li>
+				<li>mouse clicks logout</li>
+			</ol> 
+			<br>
+			Login test script written in java.<br>
 
+			<br>
+			At the end of the script, RFT outputs an html file which displays the list of passed or failed tests.  
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
 		<footer>
