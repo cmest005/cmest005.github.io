@@ -17,8 +17,40 @@
 		</nav>
 		<div class="container">
     		<div class="blurb">
-        		<h1>Coming Soon</h1>
-
+        		<h1>Senior Project</h1>
+			<h3>Description</h3>
+			Our semester-long project was to do Unit, Subsystem, and System testing on a pre-existing web application.  
+			The web app was named Schedule Maker, and it was an online resource for students which allowed them to search for 
+			classes, create schedules, and register for the classes.  It was a java based program with the User Interface written 
+			in JSP, and the database in SQL.<br><br>
+			As part of the System team, I used IBM's Rational Function Tester (RFT) to use custom verification points in order to test 
+			that the system was working as intended.  For every Functional Requirement we wrote 3 Sunny Day, and 3 Rainy Day test cases.  
+			With the app running on a Tomcat server through Eclipse, RFT could be scripted to run test cases using Java.  Here is an example 
+			of a Sunny and Rainy day test case for the Login Function.<br>
+			
+			<a href="/images/rstc.PNG" target="_blank"><img src="/images/rstcs.png" alt="rstc.PNG"></a><br>
+			<h4>Master script</h4>
+			Using this master script I created, I was able to run 30 test cases.<br>
+			<a href="/images/mscript1.jpg" target="_blank"><img src="/images/mscript1s.jpg" alt="mscript1.jpg"></a><br>
+			<a href="/images/mscript2.jpg" target="_blank"><img src="/images/mscript2s.jpg" alt="mscript2.jpg"></a><br>
+			
+			<h4>Verification point test example.</h4>
+			<ol>
+  				<li>Here the script clicks the field to enter the user name</li>
+ 				<li>adds from a list of username test data</li>
+  				<li>clicks the password field</li>
+				<li>adds from the password test data</li>
+				<li>mouse clicks login button</li>
+				<li>if correct data, page changes to the home screen, if not it refreshes with incorrect login info message</li>
+				<li>script uses a visual verification point to match the intended outcome</li>
+				<li>mouse clicks logout</li>
+			</ol> 
+			<br>
+			Login test script written in java.<br>
+			<iframe src="/files/code/SMLoginST003.java" width="90%"></iframe>
+			<br><a href="/files/code/SMLoginST003.java" target="_blank">full page display</a>
+			<br>
+			At the end of the script, RFT outputs an html file which displays the list of passed or failed tests.  
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
 		<footer>
