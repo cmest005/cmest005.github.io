@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>Carlos Mestre</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/projpages.css">
+	</head>
+	<body>
+		<nav>
+    		<ul>
+        		<li><a href="/">Home</a></li>
+	        	<li><a href="/about.html">About</a></li>
+			<li><a href="/projects.html">Projects</a></li>
+        		<li><a href="/files/CarlosMestreresume.pdf" target="_blank">Resumé</a></li>
+    		</ul>
+		</nav>
+		<div class="container">
+    		<div class="blurb">
+        		<h1>CDA4101: Structured Computer Organization</h1>
+			<h3>Description</h3>
+			This class built upon Fundamentals of Computer Systems.  It dealt getting a better understanding of the 
+			interaction between hardware and software.  
+			<h4>Final Project</h4>
+			The final project was to use a GPU and its processing power, because of its massive parallel architecture, 
+			to do large amounts of mathematical calculations in a more efficient manner.  It was a group project where I 
+			was given some current code already written by our professor and his team, and tried to optimize it to run more 
+			efficiently to increase the time savings even further when using the GPU over the CPU.  For example, as it stood the 
+			calculations for a typical run of the scoring algorithm on a CPU took 3+ hours.  For the GPU it was closer to 30 minutes. 
+			So by looking at the code and its current implemenation, maybe I could find ways to make it run even quicker.  Just think, 
+			even knocking off 5 min would be an increase of 20% in productivity.<br><br>
+			<h4>What exactly was the project?</h4>
+			The project was a program which analyzed human DNA genes in sets of k-mers, where k stood for the amount of Nucleotides analyzed.  
+			For example, the default setting was an 8-mer (8 Nucleotides).<br><br>
+			There are 4 different types of nucleotides:
+			<ol>
+  				<li>A = Adenine  </li>
+ 				<li>C = Cytosine</li>
+  				<li>G = Guanine</li>
+				<li>T = Thymine</li>
+			</ol><br>
+			When analyzing strings of nucleotides, you may run into patterns.  These patterns can be scientifically analyzed and could turn out that 
+			it may signify a gene in a human.  It may determine why someone may have blond hair or blue eyes.<br><br>
+			<h4>Analysis and Scoring</h4>
+			So in a large text file, a sequence of strings get analyzed.  Using the GPU, the program is able to use multiple threads and blocks to run the scoring 
+			algorithm in concurrency.  For the scoring, an array is mapped with scores for the 4 types of nucleotides.  For each 8-mer, a score is totalled.  
+			Here is the default implementation for how the threads run and the scoring system.<br>
+			<table>
+				<tr>
+					<td><img src="/images/seq.PNG" alt="seq.PNG"></td>
+					<td><img src="/images/seq.PNG" alt="seq1.PNG"></td>
+				</tr>	
+			</table><br>
+			
+			<h4>Approach</h4>
+			First I needed to understand what the code does. I needed to research why those pieces of nucleotides were important and 
+			if I made changes to how they were grouped, if it would affect the intended scoring system.  Then I needed to research 
+			methods to improve CUDA code.  CUDA and API which was developed by Nvidia to use on GPUs for general purpose processing.<br><br>
+			Once I started to get a grasp of the code, then I needed to locate pieces inside of the search algorithm to improve, and then test fixes 
+			for optimization.  After that was done, I needed to review the results and calculate the optimal implementation and document the results 
+			for the professor.<br><br>
+			First step was too look at Branch Divergence.<br>  
+			<td><img src="/images/branchdiv.PNG" alt="branchdiv.PNG"></td>
+			<td><img src="/images/branchdiv1.PNG" alt="branchdiv1.PNG"></td><br><br>
+			Next was variable and repetitive arithmetic.<br>
+			<td><img src="/images/branchdiv1.PNG" alt="branchdiv1.PNG"></td><br><br>
+			Then improving arithmetic efficiency.<br>
+			<td><img src="/images/arith.PNG" alt="arith.PNG"></td><br><br>
+			Finally, looking at how memory was used<br>
+			<td><img src="/images/mem.PNG" alt="mem.PNG"></td><br><br>
+			Testing the changes was using the clock and an event recorder function from CUDA.<br>
+			<td><img src="/images/testing.PNG" alt="testing.PNG"></td><br><br>
+			<h4>Results</h4>
+			Our tests gave an overall 1% improvement in 24 minute runs.  That may seem small, but it was an improvement.  Being that time was limited, 
+			the professor was happy to find the improvement.  Being that it would normally be run on much longer strings taking 4-5 hours, that improvement 
+			would help.  Most importantly, being that it was such a large project in a short amount of time in a semester, I was able to give 
+			valuable suggestions to possible fixes in the future to improve efficiency even further.  The scoring system seemed to need improvements more than anything 
+			and those were not touched.  The Model tests could be parallelized, and a newer more efficient CUDA library could be used.<br><br>
+			<h4>Final code</h4>
+			Fix 1:<br>
+			<iframe src="/files/code/scoreReads1.cu.txt" width="90%"></iframe>
+			<br><a href="/files/code/scoreReads1.cu.txt" target="_blank">full page display</a><br><br>
+			Fix 2:<br>
+			<iframe src="/files/code/scoreReads2.cu.txt" width="90%"></iframe>
+			<br><a href="/files/code/scoreReads2.cu.txt" target="_blank">full page display</a><br><br>
+			Fix 3:<br>
+			<iframe src="/files/code/scoreReads3.cu.txt" width="90%"></iframe>
+			<br><a href="/files/code/scoreReads3.cu.txt" target="_blank">full page display</a><br><br>
+			<br>
+			<p>
+			T. Cickovski, E. Peake, V. Aguiar-Pulido and G. Narasimhan.  ATria: A Novel Centrality Algorithm Applied to Biological Networks.  In Proceedings of 5th IEEE International Conference on Computational Advances in Bio and Medical Sciences (ICCABS 2015), Miami, FL 2015.
+			</p>
+			This code is covered by the <a href="/files/code/cda/GPL.txt">GNU Public License</a>
+			</div><!-- /.blurb -->
+		</div><!-- /.container -->
+		<footer>
+    		<ul>
+        		<li><a href="mailto:cmestre82@gmail.com">email</a></li>
+        		<li><a href="https://github.com/cmest005">github.com/cmest005</a></li>
+			</ul>
+		</footer>
+	</body>
+</html>
