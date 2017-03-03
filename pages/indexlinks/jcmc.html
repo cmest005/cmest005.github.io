@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>Carlos Mestre</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/projpages.css">
+	</head>
+	<body>
+		<nav>
+    		<ul>
+        		<li><a href="/">Home</a></li>
+	        	<li><a href="/about.html">About</a></li>
+			<li><a href="/projects.html">Projects</a></li>
+        		<li><a href="/files/CarlosMestreresume.pdf" target="_blank">Resumé</a></li>
+    		</ul>
+		</nav>
+		<div class="container">
+    		<div class="blurb">
+        		<h1>COP4338: Programming III</h1>
+			
+			<h3>Description</h3>
+			Class which dove deep into Java, including multithreading, synchronization, and networking.
+			<br>
+			
+			<h4>Final Project</h4>
+			Develop a memory game which gets two identical images and forms a pair.  The game uses a N by N table of cards.  Using coordinates, 
+			each player clicks on a card and if both cards match, the player receives a point.  If the cards so not match, the next player will 
+			play.  Board is a 6x6 matrix of cards, built as a 2-dimensional linked list.  <br>
+				<img src="/images/linkedlistcardlayout.PNG" alt="linkedlistcardlayout.PNG"><br>
+			<h4>Code</h4>
+			This game was designed to be played either single player or multiplayer through p2p socket TCP connections.<br><br>
+				<iframe src="/files/code/p3/GameGUI.java" width="90%"></iframe>
+				<br><a href="/files/code/p3/GameGUI.java" target="_blank">full page display</a><br><br>
+				<iframe src="/files/code/p3/LinkedListData.java" width="90%"></iframe>
+				<br><a href="/files/code/p3/LinkedListData.java" target="_blank">full page display</a><br><br>
+				<iframe src="/files/code/p3/LLTester.java" width="90%"></iframe>
+				<br><a href="/files/code/p3/LLTester.java" target="_blank">full page display</a><br><br>
+				<iframe src="/files/code/p3/MatchClient.java" width="90%"></iframe>
+				<br><a href="/files/code/p3/MatchClient.java" target="_blank">full page display</a><br><br>
+				<iframe src="/files/code/p3/MatchGameClient.java" width="90%"></iframe>
+				<br><a href="/files/code/p3/MatchGameClient.java" target="_blank">full page display</a><br><br>
+				<iframe src="/files/code/p3/MatchGameServer.java" width="90%"></iframe>
+				<br><a href="/files/code/p3/MatchGameServer.java" target="_blank">full page display</a><br><br>							
+				<iframe src="/files/code/p3/MatchServer.java" width="90%"></iframe>
+				<br><a href="/files/code/p3/MatchServer.java" target="_blank">full page display</a><br><br>
+			<h4>Screenshots</h4>
+			Cards and Starting screen<br>
+			<table>
+				<tr>
+					<a href="/images/mgstart.PNG" target="_blank"><img src="/images/mgstarts.png" alt="DC2_N"></a>
+					<a href="/images/mgcards.PNG" target="_blank"><img src="/images/mgcardss.png" alt="DC2_N"></a>
+				</tr>	
+			</table><br>
+			Error if you click same card twice and results screen<br>
+			<table>
+				<tr>
+					<a href="/images/mgerror.PNG" target="_blank"><img src="/images/mgerrors.png" alt="DC2_N"></a>
+					<a href="/images/mgresults.PNG" target="_blank"><img src="/images/mgresultss.png" alt="DC2_N"></a>
+				</tr>	
+			</table><br>
+
+			
+    		</div><!-- /.blurb -->
+		</div><!-- /.container -->
+		<footer>
+    		<ul>
+        		<li><a href="mailto:cmestre82@gmail.com">email</a></li>
+        		<li><a href="https://github.com/cmest005">github.com/cmest005</a></li>
+			</ul>
+		</footer>
+	</body>
+
+</html>
