@@ -44,7 +44,7 @@ ul.posts li {
 }
 
 table, td, tr, th{    
-	border: solid 3px #000000;    
+	border: solid 3px #5E5E5E;    
 	border-collapse: collapse;       
 	text-align: center; 
 }  
