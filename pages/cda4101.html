@@ -22,12 +22,12 @@
 			This class built upon Fundamentals of Computer Systems.  It dealt getting a better understanding of the 
 			interaction between hardware and software.  
 			<h4>Final Project</h4>
-			The final project was to use a GPU and its processing power, because of its massive parallel architecture, 
-			to do large amounts of mathematical calculations in a more efficient manner.  It was a group project where I 
-			was given some current code already written by our professor and his team, and tried to optimize it to run more 
-			efficiently to increase the time savings even further when using the GPU over the CPU.  For example, as it stood the 
+			The final project was a group project which required the use of a GPU and its processing power because of its massive parallel architecture, 
+			to do large amounts of mathematical calculations in a more efficient manner.  For the project we were given code which was developed by our
+			professor and his team.  The objective was to optimize it to run more 
+			efficiently in order to increase the time savings even further when using the GPU instead of the CPU.  For example, as it stood the 
 			calculations for a typical run of the scoring algorithm on a CPU took 3+ hours.  For the GPU it was closer to 30 minutes. 
-			So by looking at the code and its current implemenation, maybe I could find ways to make it run even quicker.  Just think, 
+			So by looking at the code and its current implemenation, maybe we could find ways to make it run even quicker.  Just think, 
 			even knocking off 5 min would be an increase of 20% in productivity.<br><br>
 			<h4>What exactly was the project?</h4>
 			The project was a program which analyzed human DNA genes in sets of k-mers, where k stood for the amount of Nucleotides analyzed.  
@@ -40,7 +40,7 @@
 				<li>T = Thymine</li>
 			</ol><br>
 			When analyzing strings of nucleotides, you may run into patterns.  These patterns can be scientifically analyzed and could turn out that 
-			it may signify a gene in a human.  It may determine why someone may have blond hair or blue eyes.<br><br>
+			they may signify a gene in a human.  It may determine why someone may have blond hair or even blue eyes.<br><br>
 			<h4>Analysis and Scoring</h4>
 			So in a large text file, a sequence of strings get analyzed.  Using the GPU, the program is able to use multiple threads and blocks to run the scoring 
 			algorithm in concurrency.  For the scoring, an array is mapped with scores for the 4 types of nucleotides.  For each 8-mer, a score is totalled.  
@@ -53,13 +53,14 @@
 			</table><br>
 			
 			<h4>Approach</h4>
-			First I needed to understand what the code does. I needed to research why those pieces of nucleotides were important and 
+			As a team, we split up some of the responsibilties.  My role was mostly research and implementation of "improved" code.  
+			First step was to understand what the code did and its purpose. I needed to research why those pieces of nucleotides were important and 
 			if I made changes to how they were grouped, if it would affect the intended scoring system.  Then I needed to research 
-			methods to improve CUDA code.  CUDA and API which was developed by Nvidia to use on GPUs for general purpose processing.<br><br>
+			methods to improve CUDA code.  CUDA is an API developed by Nvidia for use on GPUs in general purpose processing.<br><br>
 			Once I started to get a grasp of the code, then I needed to locate pieces inside of the search algorithm to improve, and then test fixes 
 			for optimization.  After that was done, I needed to review the results and calculate the optimal implementation and document the results 
 			for the professor.<br><br>
-			First step was too look at Branch Divergence.<br>  
+			First step was to look at Branch Divergence.<br>  
 			<td><img src="/images/branchdiv.PNG" alt="branchdiv.PNG"></td>
 			<td><img src="/images/branchdiv1.PNG" alt="branchdiv1.PNG"></td><br><br>
 			Next was variable and repetitive arithmetic.<br>
@@ -71,9 +72,9 @@
 			Testing the changes was using the clock and an event recorder function from CUDA.<br>
 			<td><img src="/images/testing.PNG" alt="testing.PNG"></td><br><br>
 			<h4>Results</h4>
-			Our tests gave an overall 1% improvement in 24 minute runs.  That may seem small, but it was an improvement.  Being that time was limited, 
-			the professor was happy to find the improvement.  Being that it would normally be run on much longer strings taking 4-5 hours, that improvement 
-			would help.  Most importantly, being that it was such a large project in a short amount of time in a semester, I was able to give 
+			Our tests gave an overall 1% improvement in 24 minute runs.  That may seem small, but it was an improvement.  Being that time was limited (3 weeks), 
+			the professor was happy to find the improvement.  Since the program would normally be run on much longer strings taking 4-5 hours, that improvement 
+			would help.  Considering that it was such a large project in a short amount of time in a semester, I was able to give 
 			valuable suggestions to possible fixes in the future to improve efficiency even further.  The scoring system seemed to need improvements more than anything 
 			and those were not touched.  The Model tests could be parallelized, and a newer more efficient CUDA library could be used.<br><br>
 			<h4>Final code</h4>
