@@ -42,3 +42,16 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+table, td, tr, th{    
+	border: solid 2px #5E5E5E;    
+	border-collapse: collapse;       
+	text-align: center; 
+}  
+
+th {     
+	background-color: #333333;     
+	color: white; 
+}
+th {
+    text-align: center;    
+}  
