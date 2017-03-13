@@ -43,15 +43,20 @@ ul.posts li {
     list-style: none;
 }
 table, td, tr, th{    
-	border: solid 2px #5E5E5E;    
+	border: solid 3px #595959;    
 	border-collapse: collapse;       
-	text-align: center; 
+  
 }  
 
 th {     
-	background-color: #333333;     
+	background-color: #595959;    
 	color: white; 
 }
 th {
     text-align: center;    
 }  
+td{
+    padding: 15px;
+    background-color: #e6e6e6
+  }
+  
